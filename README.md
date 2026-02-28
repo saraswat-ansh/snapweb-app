@@ -55,6 +55,5 @@ No frameworks. No dependencies. Just pure web technology.
 ---
 
 ## Author
-
--Developed by Ansh Sarswat
+Developed by Ansh Sarswat
 ---
