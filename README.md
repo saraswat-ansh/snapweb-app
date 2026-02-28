@@ -8,7 +8,7 @@ Built using the MediaRecorder API and Canvas API, SnapWeb delivers a smooth, mob
 ---
 
 ## Live Demo
-[Click here to try SnapWeb](https://your-username.github.io/snapweb-app/)
+[Click here to try SnapWeb](https://saraswat-ansh.github.io/snapweb-app/)
 
 ---
 
@@ -52,12 +52,9 @@ No frameworks. No dependencies. Just pure web technology.
 - Android Chrome  
 - Safari (Limited MediaRecorder support)
  
-
 ---
 
 ## Author
-
-Developed by Ansh Sarswat
-Feel free to connect and provide feedback!
-
+-Developed by Ansh Sarswat
+-Feel free to connect and provide feedback!
 ---
