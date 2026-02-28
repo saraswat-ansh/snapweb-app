@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+            <div class="logo-text">
+                SnapWeb
+                <div class="tagline">Snap it. Save it. Share it.</div>
+            </div>
+        </div>
+
+        <!-- Timer -->
+        <div id="recordTimer">00:00</div>
+
+        <!-- Preview -->
+        <div class="content">
+            <video id="web" autoplay playsinline muted></video>
+            <video id="recordedVideo" controls style="display:none;"></video>
+            <canvas id="con"></canvas>
+            <img id="photoPreview" style="display:none;" />
+        </div>
+        <!-- Recording Countdown -->
+        <div id="recordCountdown" style="display:none;">
+            <div id="recordText" class="flixcen">3</div>
+        </div>
+        <!-- Filters -->
+        <div class="filters">
+            <button data-filter="none">None</button>
+            <button data-filter="grayscale(100%)">Grayscale</button>
+            <button data-filter="sepia(100%)">Sepia</button>
+            <button data-filter="brightness(1.4)">Bright</button>
+        </div>
+        <div class="mode-toggle">
+            <div class="toggle-slider"></div>
+
+            <button id="photoMode" class="toggle-btn active">
+                <i class="fa-solid fa-camera"></i>
+                <span>Photo</span>
+            </button>
+
+            <button id="videoMode" class="toggle-btn">
+                <i class="fa-solid fa-video"></i>
+                <span>Video</span>
+            </button>
+        </div>
+    
+     <!-- Photo Controls -->
+     <div id="photoControls" class="controls">
+        <!-- photo buttons here -->
+        <div class="controls">
+            <button class="btn-primary" onclick="takePhoto()">
+                <i class="fa-solid fa-camera"></i> Photo
+            </button>
+            <button class="btn-secondary" id="retakeBtn" onclick="retakePhoto()" style="display:none;">
+                <i class="fa-solid fa-rotate-left"></i> Retake
+            </button>
+            <button class="btn-secondary" id="switchBtn">
+                <i class="fa-solid fa-rotate"></i>Switch
+            </button>
+
+            <a id="photoDownload" download="photo.png" style="display:none;">
+                <button class="btn-success">
+                    <i class="fa-solid fa-download"></i>Download
+                </button>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- Video Controls -->
+    <div id="videoControls" class="controls" style="display:none;">
+        <!-- video buttons here -->
+        <div class="controls">
+            <button class="btn-primary" onclick="startRecording()" id="recordBtn">
+                <i class="fa-solid fa-circle"></i> Record
+            </button>
+
+            <button class="btn-secondary" onclick="pauseResumeRecording()" id="pauseBtn" disabled>
+                <i class="fa-solid fa-pause"></i> Pause
+            </button>
+
+            <button class="btn-secondary" onclick="stopRecording()" id="stopBtn" disabled>
+                <i class="fa-solid fa-stop"></i> Stop
+            </button>
+            <button class="btn-secondary" onclick="closeVideoPreview()">
+                Retake
+            </button>
+            <a id="videoDownload" class="flixcen" style="display:none;">
+                <button class="btn-success">
+                    <i class="fa-solid fa-download"></i> Download Video
+                </button>
+            </a>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
